@@ -1,0 +1,318 @@
+#header{
+    padding-bottom: 49px;
+    position: relative;
+    .navigation{
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1170px;
+        width: 100%;
+        padding-top: 53px;
+        &__logo{
+            font-size: 54px;
+            color: white;
+
+        }
+        &__menu{
+            flex: auto;
+            position: relative;
+            top: -6px;
+            ul{
+                display: flex;
+                flex: auto;
+                justify-content: space-around;
+            }
+            @media screen and (max-width: 790px) {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            li{
+                list-style: none;
+                display: inline;
+                position: relative;
+                padding-left: 25px;
+                font-family: 'GothamBook', sans-serif;
+                font-size: 14px;
+                .icon-circle-thin{
+                    font-size: 10px;
+                    color: white;
+                    border-radius: 50%;
+                    height: 10px;
+                    margin-right: 14px;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+            li:hover .icon-circle-thin{
+                background-color: white;
+            }
+            @media screen and (max-width: 455px) {
+                display: none;
+            }
+        }
+        &__social{
+            display: flex;
+            justify-content: space-between;
+            max-width: 162px;
+            width: 100%;
+            position: relative;
+            top: -4px;
+            a{
+                border: 1px solid white;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                line-height: 40px;
+            }
+            a:hover{
+                background-color: white;
+                    color: #7d5cfa;
+            }
+            @media screen and (max-width: 760px) {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 1200px){
+            padding: 53px 10px 0;
+            
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            .navigation__menu{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:455px) {
+            padding: 53px 0 0 55px;
+        }
+    }
+    .header__btnDown{
+        z-index: 2;
+        display: block;
+        border: 1px solid white;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: white;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 98px;
+        left: 50%;
+        transform: translateX(-50%);
+        @media screen and (max-width:1500px) {
+            bottom: 161px;
+        }        
+    }
+    .header__btnDown:hover{
+        background-color: white;
+        color: #7f5cfe;
+    }
+ 
+    .header__burger{
+        position: fixed;
+        top: 0;
+        padding-left: 10px;
+        z-index: 2;
+        @media screen and (max-width: 455px) {
+            z-index: 3;
+        }
+        }
+    .burger__btn{
+        display: inline-block;
+        height: 60px;
+        width: 60px;
+        top: 45px;
+        background-color: rgba($color: #2c4058, $alpha: 0.4);
+        border-radius: 50%;
+        transition: 0.4s;
+        position: relative;
+        @media screen and (max-width: 455px) {
+            background-color: rgba($color: #2c4058, $alpha: 0.1);
+            border-radius: 20%;
+            &:hover{
+                background-color: rgba($color: #7f5cfe, $alpha: 0.5);
+            }
+
+        }
+    }
+    .btn__line, .btn__line::after, .btn__line::before{
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        position: absolute;
+    }
+    .btn__line{
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+    .btn__line::after{
+        content: '';
+        top: 10px;
+    }
+    .btn__line::before{
+        content: '';
+        top: -10px;
+    }
+    .header__burger_active{
+        .btn__line, .burger__btn{
+            background-color: transparent;
+        }
+        .btn__line::after{
+            top: 0;
+            transform: rotate(45deg);
+        }
+        .btn__line::before{
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    }
+   
+    .burger__nav{
+        padding: 100px 0 0 0;
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background: rgba($color: #2c4058, $alpha: 0.8);
+        height: 100%;
+        width: 100%;
+        max-width: 320px;
+        left: -100%;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .header__burger_active .burger__nav{
+        left: 5%;
+        margin-left: -77px;
+    }
+    .burger__nav__link{
+    padding: 25px;
+    font-family: "GothamBook", sans-serif;
+    font-size: 14px;
+        &:hover{
+            filter: brightness(0.7);
+        }
+    }
+    
+    #about-us__anchor{
+        position: absolute;
+        top: 110px;
+        left: 0;
+        z-index: 5;
+        width: 300px;
+        height: 0px;
+        background-color: red;
+    }    
+}
+
+
+
+#header__slider{
+    z-index: 2;
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    @media screen and (max-width: 1500px){
+        height: 100vh;
+    }
+    .slider__card{
+        height: 800px;
+        @media screen and (max-width: 1500px) {
+            padding: 0 30px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .card__title{
+                padding-top: 0;
+            }
+        }
+    }
+    .card1{
+        background: linear-gradient(45deg, rgba(85, 183, 255, 0.9) 0%, rgba(126, 90, 255, 0.9) 70%), url(../img/header/header_bg.png) center / cover no-repeat;
+    }
+    .card2{
+        background: linear-gradient(45deg, rgba(85, 183, 255, 0.9) 0%, rgba(126, 90, 255, 0.9) 70%), url(../img/header/header_bg2.png) center / cover no-repeat;
+    }
+    .card3{
+        background: linear-gradient(45deg, rgba(85, 183, 255, 0.9) 0%, rgba(126, 90, 255, 0.9) 70%), url(../img/header/header_bg3.png) center / cover no-repeat;
+    }
+    .card4{
+        background: linear-gradient(45deg, rgba(85, 183, 255, 0.9) 0%, rgba(126, 90, 255, 0.9) 70%), url(../img/header/header_bg4.png) center / cover no-repeat;
+    }
+    .card5{
+        background:linear-gradient(45deg, rgba(85, 183, 255, 0.9) 0%, rgba(126, 90, 255, 0.9) 70%), url(../img/header/header_bg5.png) center / cover no-repeat;
+    }
+    .card__title{
+        padding-top: 350px;
+        font-family: 'gothambold1', sans-serif;
+        font-size: 80px;
+        color: white;
+        text-align: center;
+        letter-spacing: 10px;
+    }
+    .card__subtitle{
+        font-family: 'GothamBook', sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        color: white;
+        text-align: center;
+        padding-top: 19px;
+        letter-spacing: 5px;
+    }
+    @media screen and (max-width: 1500px){
+        .card__title{
+            font-size: calc(24px + 56 * ((100vw - 320px) / (1600 - 320)));
+        }
+        .card1__subtitle{
+            font-size: calc(10px + 8 * ((100vw - 320px) / (1600 - 320)));
+        }
+    }
+    .slick-track{
+        display: block;
+        align-items: center;
+        overflow: hidden;
+    }
+    .slick-arrow{
+        display: none;
+    }
+    .slick-dots{
+        position: absolute;
+        top: 50%;
+        right: 36px;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        li{
+            list-style: none;
+            margin: 33px 0;
+            &.slick-active button{
+            
+                background-color: white;
+                border: 1px solid white;
+            }
+        }
+        button{
+            font-size: 0;
+            width: 9px;
+            height: 9px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+        @media screen and (max-width: 760px) {
+            right: 15px;
+        }
+    }
+
+}

@@ -1,0 +1,178 @@
+#news{
+    padding: 140px 215px 209px;
+    background: url(../img/news/imgBg.png) center / cover no-repeat;
+    hr{
+        background-color: white;
+        margin: 0 auto 30px;
+    }
+    .news{
+        &__title{
+            font-family: 'gothamMedium', sans-serif;
+            font-weight: normal;
+            color: white;
+        }
+    }
+}
+
+//SLIDER NEWS
+
+#news{
+    .news__slider{
+        height: 514px;
+        width: 100%;
+        max-width: 1170px;
+        margin: 90px auto 0;
+        min-width: 0;
+        position: relative;
+       
+    }
+    .slider__box{
+        font-family: 'gothambold1', sans-serif;
+        color: #2c4058;
+        background-color: white;
+        height: 514px;
+        width: 100%;
+        max-width: 370px;
+        padding-bottom: 30px;
+        min-width: 0;
+        position: relative;
+        margin-right: 15px;
+        margin-left: 15px;
+        img{
+            width: 100%;
+        }
+        .box{
+            &__title{
+                font-size: 22px;
+                text-transform: uppercase;
+                padding: 20px 30px 5px 22px;
+                line-height: 1.5;
+            }
+            &__text{
+                padding: 0 30px 8px 22px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+            @media screen and (max-width: 468px){
+                &__title, &__text{
+                    font-size: 15px;
+                }
+            }
+        }
+        .signature{
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: absolute;
+            bottom: 30px;
+            &__logo{
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    .autor{
+        font-family: 'GothamBook', sans-serif;
+        padding-left: 20px;
+        &__name{
+            font-size: 18px;
+        }
+        &__time{
+            color: #55b7ff;
+            font-size: 14px;
+        }
+    }
+    .logo1{
+        background: url(../img/news/autor1.png) center / cover no-repeat;
+    }
+    .logo2{
+        background: url(../img/news/autor2.png) center / cover no-repeat;
+    }
+    .logo3{
+        background: url(../img/news/autor3.png) center / cover no-repeat;
+    }
+   
+    .slick-list{
+        overflow: hidden;
+    }
+    .slick-track{
+        display: flex;
+        justify-content: space-between;
+    }
+    .news__slider{
+       
+        .slick-arrow{
+            position: absolute;
+            top: 50%;
+            z-index: 0;
+            font-size: 0;
+            height: 40px;
+            width: 40px;
+            border-radius: 50px;
+            border: 1px solid white;
+            outline: none;
+            cursor: pointer;
+            &:hover{
+                border-width: 2px;
+            }
+            &.slick-prev{
+                left: -100px;
+                background: url(../svg/angle-down.svg) center  no-repeat;
+                transform: rotate(90deg) translateX(-50%);
+            }
+            &.slick-next{
+                right: -100px;
+                background: url(../svg/angle-down.svg) center no-repeat;
+                transform: rotate(-90deg) translateX(50%);
+            }
+        }
+      
+        .slick-dots{
+            display: flex;
+            margin: 0 auto;
+            padding-top: 50px;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 205px;
+        }
+        .slick-dots li{
+            list-style: none;
+            &.slick-active button{
+                background-color: white;
+            }
+        }
+        .slick-dots button{
+            font-size: 0;
+            width: 9px;
+            height: 9px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+    }
+    @media screen and (max-width:1500px) {
+        padding: 140px 1% 158px;
+        .news__slider .slick-arrow{
+            &.slick-prev{
+                left: -45px;
+            }
+            &.slick-next{
+                right: -45px;
+            }
+        }
+
+    }
+    @media screen and (max-width:1266px){
+        .news__slider{
+            width: 80%;
+        }
+    }
+    @media screen and (max-width: 468px){
+        .news__slider .slick-arrow{
+            display: none;
+        }
+    }
+
+}
